@@ -1,1 +1,12 @@
 
+{
+  "name": "devops-node-app",
+  "version": "1.0.0",
+  "description": "Simple Node.js application for DevOps CI/CD pipeline",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "author": "Arun Krishna",
+  "license": "MIT"
+}
