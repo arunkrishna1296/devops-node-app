@@ -4,7 +4,8 @@ pipeline {
         stage('checkout') {
             steps {
                 echo 'Checking out source code...'
-                checkout scm
+                git branch: 'main',
+               url: 'https://github.com/arunkrishna1296/devops-node-app.git'
                 
             }
         }
@@ -16,15 +17,16 @@ pipeline {
             }
         }
         stage('Test') {
-    steps {
-        echo 'Testing application...'
-        sh 'node --check app.js'
+            steps {
+               echo 'Running tests...'
+                sh 'npm test' 
             }
-        }
+        }   
         stage('Docker Build') {
             steps {
                 echo 'Building Docker image...'
                 sh 'docker build -t devops-node-app .'
+               
             }
         }  
     }
